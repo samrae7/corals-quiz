@@ -40,6 +40,7 @@ body {
       padding:0;
       width:100%;
       margin:0 auto;
+      max-width:1123px;
     }
 
 nav {
@@ -401,6 +402,10 @@ input[type=submit],
         .results {
           margin: 0;
           padding: 0;
+        }
+
+        .score-box {
+          display:none;
         }
 
         h1,h2,p {
