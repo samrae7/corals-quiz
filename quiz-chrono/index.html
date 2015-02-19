@@ -45,7 +45,7 @@
 		<div class="image-wrapper">
 
 			<div class="intro-image-holder">
-				<img src="images/bike-family.jpg">
+				<img src="images/intro.jpg">
 		    </div>
 
 		    <div class="slide-window">
@@ -57,20 +57,27 @@
 		    	</div>
 
 			    <div class="slide-holder">
-			        <div class="slide" data-title="Slide 1 title" data-info-text="Slide 1 info text" id="slide1">
-			          	<img src="images/steg.jpg">
+			        <div class="slide" data-title="Star Coral" data-info-text="Star coral" id="slide1">
+			          	<img src="images/star-coral-700.jpg">
 			        </div>
-			        <div class="slide" data-title="Slide 2 title" data-info-text="Slide 2 info text" id="slide2">
-			         	<img src="images/corals.jpg">
+			        <div class="slide" data-title="Sea fan and seahorse" data-info-text="Sea fan, <i>Gorgonia sp.</i> &copy Catlin Seaview Survey, The sea fan coral's network of arms are often home to seahorses." id="slide2">
+			         	<img src="images/sea-fan-700.jpg">
 			        </div>
-			        <div class="slide"  data-title="Slide 3 title" data-info-text="Slide 1 info text" id="slide3">
-			          	<img src="images/touche-resize.jpg">
+			        <div class="slide"  data-title="Sponge crab" data-info-text="Sponge crab, Dromia erythropus &copy Natural History Museum" id="slide3">
+			          	<img src="images/sponge-crab-700.jpg">
+			        </div>
+			        <div class="slide"  data-title="Clownfish" data-info-text="Clownfish, <i>Amphiprion ocellaris</i> &copy Catlin Seaview Survey. The clownfish shelters in the tentacles of the anemone. In exchange the clownfish protects the anemone by chasing away predators.
+" id="slide4">
+			          	<img src="images/clownfish-700.jpg">
+			        </div>
+			        <div class="slide"  data-title="What am I?" data-info-text="&copy Natural History Museum" id="slide5">
+			          	<img src="images/cushion-star-700.jpg">
 			        </div>
 			     </div>
 		    </div>
 
 		    <div class="results-image-holder">
-		      	<img src="images/food.jpg">
+		      	<img src="images/results.jpg">
 		    </div>
 		</div>
 
@@ -79,8 +86,11 @@
 			<h1>Corals Quiz</h1>
 
 		    <div class="intro">
-				  <h2>Welcome to the corals quiz</h2>
-				  <p>Dark brewed rich, sugar, eu percolator rich crema aftertaste instant trifecta. Spoon plunger pot chicory aroma, extra so variety pumpkin spice in galão cream white. Caramelization froth coffee, macchiato cultivar instant aromatic aftertaste lungo espresso. Aroma cortado cultivar steamed eu single shot steamed.</p>
+				 
+				  <p>In the new exhibition, Coral Reefs: Secret Cities of the Sea, you will meet the inhabitants of these richly diverse habitats, which host almost a quarter of all marine species.</p>
+				  <p>You'll find out why reefs are so important and how their future is being secured.</p>
+				  <p>To check you're paying attention we've created this short quiz to test your knowledge.</p>
+
 				  <input id="start-button" type="submit" value="Start">
 			</div>
 		  
@@ -88,40 +98,61 @@
 			    <div class="quiz-window" id="questions">
 
 				      <div class="question cf" id="question1">
-				         
+				        <h2></h2>
+				        <p>What shape is the basic building block of all corals?</p>
+				        <ul>
+				          <li><a href="#">Triangle</a></li> 
+				          <li><a href="#" data-answer="correct">Hexagon</a></li>
+				          <li><a href="#">Square</a></li>
+				        </ul>
+				         <input type="submit" value="Next" class="next-button">
+				      </div>
+
+				       <div class="question cf" id="question2">
+				        <h2></h2>
+				        <p>Which of these is something sea fan corals feed on?</p>
+				        <ul>
+				          <li><a href="#">Seaweed</a></li> 
+				          <li><a href="#" data-answer="correct">Plankton</a></li>
+				          <li><a href="#">Seahorse</a></li>
+				        </ul>
+				         <input type="submit" value="Next" class="next-button">
+				      </div>
+
+				      <div class="question cf" id="question3">			         
 				         <h2></h2>
-				         <p>Is this Question 1?</p>
+				         <p>Why do Sponge crabs drag sea sponges onto their backs?</p>
 				         <ul>
 					          <li>
-					          	<a href="#" id="a1" data-answer="correct">Yes of course</a>
+					          	<a href="#" data-answer="correct">Protection from predators</a>
 					          </li>
 					          <li>
-					          	<a href="#" id="a2">Maybe</a></li>
+					          	<a href="#">Attract a mate</a></li>
 					          <li>
-					          	<a href ="#" id="a3">No</a>
+					          	<a href ="#">To keep warm</a>
 					          </li>
 				         </ul>
 				         <input type="submit" value="Next" class="next-button">
 				      </div>
 
-				      <div class="question cf" id="question2">
+				      <div class="question cf" id="question4">
 				        <h2></h2>
-				        <p>Is this Question 2?</p>
+				        <p>What is the name for a relationship between two species where both benefit? </p>
 				        <ul>
-				          <li><a href="#">Not sure</a></li>
-				          <li><a href="#" >No way</a></li>
-				          <li><a href="#" data-answer="correct">You betcha</a></li>
+				          <li><a href="#">Commensual</a></li>
+				          <li><a href="#">Platonic</a></li>
+				          <li><a href="#" data-answer="correct">Mutualistic</a></li>
 				        </ul>
 				          <input type="submit" value="Next" class="next-button">
 				      </div>
 
-				      <div class="question cf" id="question3">
+				       <div class="question cf" id="question5">
 				        <h2></h2>
-				        <p>Is this Question 3?</p>
+				        <p>Which animal is this part of?</p>
 				        <ul>
-				          <li><a href="#">Nah</a></li> 
-				          <li><a href="#" data-answer="correct">Yes indeed</a></li>
-				          <li><a href="#">Negative</a></li>
+				          <li><a href="#">Spiny cushion star</a></li> 
+				          <li><a href="#" data-answer="correct">Hermit Crab</a></li>
+				          <li><a href="#">Turbinaria coral</a></li>
 				        </ul>
 				         <input type="submit" value="Next" class="next-button">
 				      </div>
@@ -132,13 +163,11 @@
 				      <h2>Score: <span class="correct-answers">0</span>/<span class="answers-so-far">0</span></h2>
 				      <p><span class="correct-answers">0</span> correct answers out of <span class="answers-so-far">0</span> answered</p>
 				      <p><span id="questions-to-go">3</span> answers to go</p>
-				</div> -->
-
-				
+				</div> -->				
 			</div>	
 			<div class="results" id="resultsSummary">
 				  <h2>You got <span class="correct-answers">0</span> out of <span class="no-of-questions">0</span> questions right</h2>
-				  <p>Dark brewed rich, sugar, eu percolator rich crema aftertaste instant trifecta. Spoon plunger pot chicory aroma, extra so variety pumpkin spice in galão cream white. Caramelization froth coffee macchiato.</p>
+				  <p>Thanks for completing the Corals Quiz. Visit our website to find out more about these fragile ecosystems and the incredible diversity of species that live in them.</p>
 				  <a href="#">Exit</a>
 				  <a href="">Try again</a>		
 			</div>

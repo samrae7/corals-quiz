@@ -1,16 +1,28 @@
  $( document ).ready(function() {
    
 
-// *********CAROUSEL*********
 
-// $('#leftNav').click(moveSlideLeft).click(setMarginWidth);
-// $('#rightNav').click(moveSlideRight).click(setMarginWidth);
 $('#start-button').click(start);
 $('.info-button').click(showInfo);
 $('.close-icon').click(hideInfo);
 
+$('a').click(showMessage).click(showButton).click(scrollDown).click(unwrapAnswers).click(updateScore);
+
+$(function() {
+    $('div.question').hide();
+    $('div.question:first').show();
+    $('div.question:last .next-button').attr('value','Show results');
+    $('.next-button').click(function() {
+        transition($(this).closest('.question'));
+        return false;
+    }).click(moveSlideRight).click(setMarginWidth);;
+});
 
 var slidePosition=0;
+var noOfQuestions = $('.question').length;
+var correctAnswers=0;
+var questionsAnswered=0;
+
 setInfoText();
 setSlideTitles();
 
@@ -30,8 +42,6 @@ function setSlideTitles(){
 }
 
 function setMarginWidth(){
-// var slideWidth = $('#slide1').width();
-// var slideHolderMargin=-slideWidth*slidePosition
 var slideHolderMargin=-100*slidePosition;
 $('.slide-holder').css("margin-left", slideHolderMargin+'%');
 }
@@ -40,13 +50,10 @@ function setInfoText(){
   var text=$('#slide'+(slidePosition+1)).data('infoText');
   $('.info-text').html(text);
 }
-//   var infoTextSlide1="Slide 1 info text";
-//   var infoTextSlide2="Slide 2 info text";
-//   var infoTextSlide3="Slide 3 info text";
-// }
+
 
 function moveSlideRight() {
-  if(slidePosition==2) {
+  if(slidePosition==4) {
     slidePosition=0}
   else {
     slidePosition++;
@@ -57,13 +64,12 @@ function moveSlideRight() {
 
   function moveSlideLeft() {
   if(slidePosition==0) {
-    slidePosition=2}
+    slidePosition=4}
     else {
       slidePosition=slidePosition-1;
   };
   hideInfo();
   }
-// 
 
   
 function showInfo(){
@@ -76,30 +82,14 @@ function hideInfo(){
   $('.info-button').show();
 }
 
-//********QUIZ*******
-
-$( document ).ready(function() {
-  
-var noOfQuestions = $('.question').length;
-var correctAnswers=0;
-var questionsAnswered=0;
-
 
 
 $(".no-of-questions").html(noOfQuestions);
 
-$(function() {
-    $('div.question').hide();
-    $('div.question:first').show();
-    $('div.question:last .next-button').attr('value','Show results');
-    $('.next-button').click(function() {
-        transition($(this).closest('.question'));
-        return false;
-    }).click(moveSlideRight).click(setMarginWidth);;
-});
-
 function transition($question) {
     $question.fadeOut('fast',function() {
+
+      setSlideTitles();
         
         if ($question.attr('id') !== $('.question:last').attr('id')) {
             $question.next('.question').fadeIn('fast');
@@ -114,9 +104,14 @@ function transition($question) {
     });
 }
 
- 
-$('a').click(showMessage).click(showButton).click(unwrapAnswers).click(updateScore);
    
+
+function scrollDown(){
+  var nextB = $(this).closest('div').find('.next-button');
+   $('html, body').animate({
+    scrollTop: nextB.offset().top
+}, 1000);
+ }
 
 //I tried to write selectAnswer as a function with arguments and then parse (red, selectAnswer) to the click event but it didn;t work. ASK ABOUT THIS. NB: This was while trying to make selectAnswer give a green background for correct answer and red for wrong.
 
@@ -146,18 +141,11 @@ if ( questionsAnswered < noOfQuestions
    
     $("#questions-to-go").html(questionsToGo);
   
-/*    console.log(questionsToGo);*/
-
     
     } else {
-    //show final score
-    // $(".quiz-box").hide();
-    // $("#resultsSummary").show();
       
     }
 }
-
-/*  '#09F23F'*/
   
 
 function unwrapAnswers() {
@@ -166,57 +154,40 @@ function unwrapAnswers() {
   
 };
 
-function showMessage() {
-  
-  var question1CorrectMessage="This is the message you get when you get question  1 right";
-  var question1IncorrectMessage="This is the message you get when you get question 1 wrong";
-
-  var question2CorrectMessage="This is the message you get when you get question 2 right";
-  var question2IncorrectMessage="This is the message you get when you get question 2 wrong";
-
-  var question3CorrectMessage="This is the message you get when you get question 3 right";
-  var question3IncorrectMessage="This is the message you get when you get question 3 wrong";
-  
-if ($(this).attr('data-answer') === 'correct') {  
-
-        $(this).closest('ul').append('<div class="reveal-box"><p>' + eval($(this).closest('div').attr('id')+'CorrectMessage') + '</p></div>');   
-  $(this).closest('li').addClass('answer-correct');
-  
-  } else {
+  function showMessage() {
     
-         $(this).closest('ul').append('<div class="reveal-box"><p>'+ eval($(this).closest('div').attr('id')+'IncorrectMessage')+'</p></div>');
-      $(this).closest('li').addClass('answer-incorrect');
-}
-return false;
-};
+    var question1CorrectMessage="That's right. A coral starts with a single polyp, which forms a calcium carbonate foundation with six sides.";
+    var question1IncorrectMessage="Sorry, wrong shape. Every coral begins as a hexagon when a single polyp lays down a calcium carbonate foundation with six sides. ";
 
-});  
+    var question2CorrectMessage="That's right. Sea fans filter bacteria, plankton and waste matter from the water using their eight-tentacled polyps.";
+    var question2IncorrectMessage="Corals can't eat seaweed or seahorses. They get nutrients by filtering bacteria, plankton and waste matter from the water.";
+
+    var question3CorrectMessage="Yes that's right. This is an example of commensalism - a relationship where one species benefits and the other is unharmed.";
+    var question3IncorrectMessage="Sponges don't help with that. It's for protection from predators.";
+
+     var question4CorrectMessage="Correct. Did you know, a protective coating of mucus allows the clownfish to take refuge in the anemone's tentacles without being stung?";
+    var question4IncorrectMessage="The correct answer is 'mutualistic', which is one type of symbiosis.";
+
+     var question5CorrectMessage="Well done. Noticing small details like these is an important skill for scientists.";
+    var question5IncorrectMessage="Take a closer look - those bumps are from the surface of the spiny cushion star.";
+    
+  if ($(this).attr('data-answer') === 'correct') {  
+
+          $(this).closest('ul').append('<div class="reveal-box"><p>' + eval($(this).closest('div').attr('id')+'CorrectMessage') + '</p></div>');   
+    $(this).closest('li').addClass('answer-correct');
+    
+    } else {
+      
+           $(this).closest('ul').append('<div class="reveal-box"><p>'+ eval($(this).closest('div').attr('id')+'IncorrectMessage')+'</p></div>');
+        $(this).closest('li').addClass('answer-incorrect');
+  }
+  return false;
+  };
+ 
 
 function showButton(){
   $(this).closest('div').find('.next-button').show();
 };
   
 
-/*function selectMessage() {
-  
-  var question1CorrectMessage="this is the message you get when you get question  1 right"
-  var question1IncorrectMessage="this is the message you get when you get question 1 wrong"
-
-  var question2CorrectMessage="this is the message you get when you get question 2 right"
-  var question2IncorrectMessage="this is the message you get when you get question 2 wrong"
-
-  var question3CorrectMessage="this is the message you get when you get question 3 right"
-  var question3IncorrectMessage="this is the message you get when you get question 3 wrong"
-  
-  
-  if ( $(this).attr('data-answer') === 'correct' ) {
-  alert(eval($(this).closest('div').attr('id')+'CorrectMessage'));
-}
-  
-else {
-  alert(eval($(this).closest('div').attr('id')+'IncorrectMessage'));
-}
-};*/
-
-
-  });
+});
