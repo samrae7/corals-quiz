@@ -124,7 +124,7 @@ p {
 
 #page-header a img {
   
-  margin: 3% 0 0 1%;
+  margin: 3% 0 2% 1%;
   width:75%;
   max-width:335px;
   float:left;
@@ -337,108 +337,125 @@ input[type=submit],
   margin:5px;
 
 }
-   
-@media screen and (min-width: 919px) {
 
-    body {
-          font-size:14px;
+@media screen and (min-width: 448px) {
+
+    .burger {
+      margin: 1% 8px 0 0;
+    }  
+
+  }
+
+  @media screen and (min-width: 702px) {
+
+      .burger {
+        margin: 1.5% 0% 0 0;
+      }  
+
+  }  
+
+   
+    @media screen and (min-width: 919px) {
+
+        body {
+              font-size:14px;
+            }
+
+
+        .burger {
+          display:none;
+        }
+
+        #page-header {
+          width:90%;
+          margin:0 auto;
+          border-bottom: 1px solid black;
+          padding:0;
+
+        }
+
+        #page-header nav {
+          float: right;
+          display:block;
+        }
+
+        #page-header nav li {
+          float: left;
+        }
+
+        #page-header a img {
+        margin: 1% 0 0 0em;
+        }
+
+        .image-wrapper {
+          float:right;
+          width:65%;
+          margin-top: 0.5em;
+        }
+
+        .text-wrapper {
+          float:left;
+          width:35%;
+        }
+
+        .results {
+          margin: 0;
+          padding: 0;
+        }
+
+        h1,h2,p {
+          margin-left: 0;
         }
 
 
-    .burger {
-      display:none;
-    }
+        h2 {
+          margin-top: 0;
+        }
 
-    #page-header {
-      border-bottom: 1px solid black;
+        input[type=submit],
+        .results a {
+        margin-top: 0.5em;
+        margin-right: 2.1em;
+        }
 
-    }
+        .question,
+        .results,
+        .intro {
+          box-sizing:border-box;
+          padding-right:1.5em;
+       
+        }
 
-    #page-header nav {
-      float: right;
-      display:block;
-    }
+        .question ul {
+          padding-right: 2em;
+        }
 
-    #page-header nav li {
-      float: left;
-    }
+        .question li {
+          padding-left:0.5em;
 
-    #page-header a img {
-    margin: 1% 0 0 2em;
-    }
+        }
 
-    .image-wrapper {
-      float:right;
-      width:65%;
-      margin-top: 0.5em;
-    }
 
-    .text-wrapper {
-      float:left;
-      width:35%;
-    }
-
-    .results {
-      margin: 0;
-      padding: 0;
-    }
-
-    h1,h2,p {
-      margin-left: 0;
-    }
-
-/*    h1 {
-      padding-left:0.85em;
-    }*/
-
-    h2 {
-      margin-top: 0;
-    }
-
-    input[type=submit],
-    .results a {
-    margin-top: 0.5em;
-    margin-right: 2.1em;
-    }
-
-    .question,
-    .results,
-    .intro {
-      box-sizing:border-box;
-      padding-right:1.5em;
-    /*  padding-left: 2em*/
-    }
-
-    .question ul {
-      padding-right: 2em;
-    }
-
-    .question li {
-      padding-left:0.5em;
+       .quiz-wrapper {     
+          width:90%;
+        }
 
     }
 
-
-   .quiz-wrapper {     
-      width:90%;
-    }
-
-}
-
-@media screen and (min-width: 1024px) {
-  body {
-    font-size:15px;
-  }
+    @media screen and (min-width: 1024px) {
+      body {
+        font-size:15px;
+      }
 
 
-  }
+      }
 
-  @media screen and (min-width: 1280px) {
-     body {
-    font-size:16px;
-  }
+      @media screen and (min-width: 1280px) {
+         body {
+        font-size:16px;
+      }
 
 
-  }
+      }
 
 
