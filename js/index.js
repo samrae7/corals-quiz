@@ -5,6 +5,7 @@
 $('#start-button').click(start);
 $('.info-button').click(showInfo);
 $('.close-icon').click(hideInfo);
+$('.burger').click(displayNav);
 
 $('a').click(showMessage).click(showButton).click(scrollDown).click(unwrapAnswers).click(updateScore);
 
@@ -25,6 +26,10 @@ var questionsAnswered=0;
 
 setInfoText();
 setSlideTitles();
+
+function displayNav(){
+  $('nav').slideToggle();
+}
 
 function start(){
   $('.intro').fadeOut('fast',function(){

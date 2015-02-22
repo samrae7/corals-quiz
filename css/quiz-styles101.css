@@ -50,7 +50,7 @@ nav {
 
 li {
   list-style-type:none;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 
@@ -136,7 +136,7 @@ p {
 #page-header nav {
   float:none;
   padding:0;
-  margin:0 10% 0 0;
+  width:100%;
 }
 
 #page-header nav ul{
@@ -148,11 +148,13 @@ p {
   float: none;
   padding:0;
   margin:0;
+  border-top: solid 1px grey;
+
 }
 
 #page-header nav a {
   display: block;
-  padding: 20px 15px;
+  padding: 13px 8px;
 }
 
 #page-header nav a:hover {
@@ -373,22 +375,38 @@ input[type=submit],
         #page-header {
           width:90%;
           margin:0 auto;
-          border-bottom: 1px solid black;
           padding:0;
 
         }
 
         #page-header nav {
           float: right;
-          display:block;
+          display:block !important;
+          border: 1px solid #ccc;
         }
 
         #page-header nav li {
           float: left;
+          font-size: 1.2em;
+          border-top: none;
+          text-align: center;
+          box-sizing:border-box;
+          display: table-cell;
+
+         
+        }
+
+        #page-header nav li a {
+        /*padding: 20px 15px;*/
+        padding: 0.2em 1.5em 0.3em 1.5em;
+         border-left: #ccc solid 1px;
+         margin-left: 1px;
+
+       
         }
 
         #page-header a img {
-        margin: 1% 0 0 0em;
+        margin: 1% 0 1% 0;
         }
 
         .image-wrapper {
@@ -450,13 +468,28 @@ input[type=submit],
 
     }
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1054px) {
+      
       body {
         font-size:15px;
       }
 
+      #page-header nav li {
+              font-size: 1.3em;
+      }
 
       }
+
+         @media screen and (min-width: 1134px) {
+          
+
+            #page-header nav li {
+              font-size: 1.4em;
+            }
+
+          }
+
+
 
       @media screen and (min-width: 1280px) {
          body {
